@@ -123,6 +123,16 @@ export function handleNewToken(event: NewTokenRegistered): void {
     token.foreignChainId = 100;
     token.homeName = tokenObject.name;
     token.foreignName = tokenObject.name.slice(0, -7);
+  } else if (network == 'ropsten' && direction == 'gusandbox-ropsten') {
+    token.homeChainId = 3;
+    token.foreignChainId = 99999;
+    token.homeName = tokenObject.name;
+    token.foreignName = tokenObject.name.slice(0, -7);
+  } else if (network == 'gu_sandbox' && direction == 'gusandbox-ropsten') {
+    token.homeChainId = 99999;
+    token.foreignChainId = 3;
+    token.homeName = tokenObject.name;
+    token.foreignName = tokenObject.name.slice(0, -7);
   }
 
   token.save();
