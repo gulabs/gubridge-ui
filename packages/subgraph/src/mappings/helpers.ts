@@ -47,6 +47,10 @@ export function getDirection(): String {
     return 'poa-xdai';
   } else if (network == 'poa-sokol' || network == 'kovan') {
     return 'kovan-sokol';
+  } else if ( address ==
+    Address.fromString('0x899BAc10d91065aF3158c1D44C3Afa3DB62A00F5') || address ==
+    Address.fromString('0xb454e28C7C7D9683a6bC849965D3b3e96845e33E')) {
+    return 'gusandbox-ropsten';
   }
   return '';
 }
@@ -114,6 +118,12 @@ export function updateHomeTokenInfo(
       token.homeName = tokenObject.name;
     } else if (network == 'bsc') {
       token.homeChainId = 56;
+      token.homeName = tokenObject.name;
+    } else if (network == 'ropsten') {
+      token.homeChainId = 3;
+      token.homeName = tokenObject.name;
+    } else if (network == 'gu_sandbox') {
+      token.homeChainId = 99999;
       token.homeName = tokenObject.name;
     }
 

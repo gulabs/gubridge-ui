@@ -2,9 +2,9 @@ import {
   BSC_XDAI_BRIDGE,
   ETH_BSC_BRIDGE,
   ETH_XDAI_BRIDGE,
+  GUSANDBOX_ROPSTEN_BRIDGE,
   KOVAN_SOKOL_BRIDGE,
-  POA_XDAI_BRIDGE,
-} from 'lib/networks';
+  POA_XDAI_BRIDGE} from 'lib/networks';
 
 const OWLTokenOverride = {
   100: {
@@ -241,6 +241,7 @@ const POA_XDAI_OVERRIDES = {
 };
 
 const ETH_BSC_OVERRIDES = {};
+const GUSANDBOX_ROPSTEN_OVERRIDES = {};
 
 const OVERRIDES = {
   [ETH_XDAI_BRIDGE]: ETH_XDAI_OVERRIDES,
@@ -248,6 +249,7 @@ const OVERRIDES = {
   [BSC_XDAI_BRIDGE]: BSC_XDAI_OVERRIDES,
   [POA_XDAI_BRIDGE]: POA_XDAI_OVERRIDES,
   [ETH_BSC_BRIDGE]: ETH_BSC_OVERRIDES,
+  [GUSANDBOX_ROPSTEN_BRIDGE]: GUSANDBOX_ROPSTEN_OVERRIDES,
 };
 
 export const isOverridden = (bridgeDirection, token) => {

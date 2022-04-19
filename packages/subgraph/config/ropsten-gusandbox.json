@@ -1,0 +1,6 @@
+{
+  "network": "ropsten",
+  "startBlock": "12167648",
+  "omnibridge": "0xb454e28C7C7D9683a6bC849965D3b3e96845e33E",
+  "amb": "0xF1b5cc67c911F67cCC4021C22241AC7c21CB43C8"
+}

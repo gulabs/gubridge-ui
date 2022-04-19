@@ -2,6 +2,7 @@ import {
   BSC_XDAI_BRIDGE,
   ETH_BSC_BRIDGE,
   ETH_XDAI_BRIDGE,
+  GUSANDBOX_ROPSTEN_BRIDGE,
   KOVAN_SOKOL_BRIDGE,
   nativeCurrencies,
   POA_XDAI_BRIDGE,
@@ -11,6 +12,7 @@ export {
   BSC_XDAI_BRIDGE,
   ETH_BSC_BRIDGE,
   ETH_XDAI_BRIDGE,
+  GUSANDBOX_ROPSTEN_BRIDGE,
   KOVAN_SOKOL_BRIDGE,
   POA_XDAI_BRIDGE,
 };
@@ -107,6 +109,25 @@ const ETH_BSC_BRIDGE_CONFIG = {
   tokensClaimDisabled: [],
 };
 
+
+const GUSANDBOX_ROPSTEN_BRIDGE_CONFIG = {
+  label: 'GUSandbox⥊Ropsten',
+  homeChainId: 99999,
+  foreignChainId: 3,
+  enableForeignCurrencyBridge: true,
+  foreignMediatorAddress:
+    '0xb454e28C7C7D9683a6bC849965D3b3e96845e33E'.toLowerCase(),
+  homeMediatorAddress:
+    '0x899BAc10d91065aF3158c1D44C3Afa3DB62A00F5'.toLowerCase(),
+  foreignAmbAddress: '0xF1b5cc67c911F67cCC4021C22241AC7c21CB43C8'.toLowerCase(),
+  homeAmbAddress: '0x55af7F974F6B294034000Bb46c6359C5c605B62A'.toLowerCase(),
+  foreignGraphName: 'cuonghx-gutech/ropsten-token-bridge',
+  homeGraphName: 'cuonghx-gutech/gusandbox-ropsten-omnibridge',
+  ambLiveMonitorPrefix: 'http://alm-bsc.herokuapp.com',
+  claimDisabled: false,
+  tokensClaimDisabled: [],
+};
+
 const ENABLED_BRIDGES = process.env.REACT_APP_ENABLED_BRIDGES.split(' ').map(
   b => b.toLowerCase(),
 );
@@ -117,6 +138,7 @@ const bridgeInfo = {
   [POA_XDAI_BRIDGE]: POA_XDAI_BRIDGE_CONFIG,
   [KOVAN_SOKOL_BRIDGE]: KOVAN_SOKOL_BRIDGE_CONFIG,
   [ETH_BSC_BRIDGE]: ETH_BSC_BRIDGE_CONFIG,
+  [GUSANDBOX_ROPSTEN_BRIDGE]: GUSANDBOX_ROPSTEN_BRIDGE_CONFIG,
 };
 
 const getNetworkConfig = bridges => {
@@ -193,5 +215,14 @@ export const defaultTokens = {
       symbol: 'WBNB',
       name: 'Wrapped BNB from BSC',
     },
+  },
+  [GUSANDBOX_ROPSTEN_BRIDGE]: {
+    99999: {
+      address: '0x34E60f4adc2DF071046aE753f2ff4d7032A58938',
+      chainId: 99999,
+      symbol: 'CCC2',
+      name: 'CCC2',
+    },
+    3: nativeCurrencies[3],
   },
 };

@@ -42,6 +42,9 @@ export const useBridgeDirection = () => {
     chainId => {
       const subgraphName =
         homeChainId === chainId ? homeGraphName : foreignGraphName;
+        if (chainId === 99999) {
+          return `https://graphnode.guswap.tk/subgraphs/name/${subgraphName}`
+        }
       return `https://api.thegraph.com/subgraphs/name/${subgraphName}`;
     },
     [foreignGraphName, homeChainId, homeGraphName],
