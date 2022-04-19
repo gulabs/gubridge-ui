@@ -32,7 +32,7 @@
     "deploy-bsc-mainnet": "graph deploy dan13ram/bsc-to-mainnet-omnibridge --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
     "prepare-gusandbox-ropsten": "mustache config/gusandbox-ropsten.json subgraph.template.yaml > subgraph.yaml",
     "prepare-ropsten-gusandbox": "mustache config/ropsten-gusandbox.json subgraph.template.yaml > subgraph.yaml",
-    "deploy-gusandbox-ropsten": "graph deploy cuonghx-gutech/gusandbox-ropsten-omnibridge --debug --ipfs https://ipfs.network.thegraph.com --node http://34.84.183.81:8020",
+    "deploy-gusandbox-ropsten": "graph deploy cuonghx-gutech/gusandbox-ropsten-omnibridge --debug --ipfs https://ipfs.network.thegraph.com --node http://xx.xx.xxx.xx:8020",
     "deploy-ropsten-gusandbox": "graph deploy cuonghx-gutech/ropsten-token-bridge --debug --ipfs https://ipfs.network.thegraph.com --node https://api.thegraph.com/deploy/"
   },
   "devDependencies": {
