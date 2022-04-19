@@ -5,6 +5,7 @@ export const BSC_XDAI_BRIDGE = 'bsc-xdai';
 export const POA_XDAI_BRIDGE = 'poa-xdai';
 export const KOVAN_SOKOL_BRIDGE = 'kovan-sokol';
 export const ETH_BSC_BRIDGE = 'eth-bsc';
+export const GUSANDBOX_ROPSTEN_BRIDGE = 'gusandbox-ropsten';
 
 export const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000';
 export const ETHER_CURRENCY_LOGO =
@@ -76,6 +77,17 @@ export const nativeCurrencies = {
     homeTokenAddress:
       '0x9fe3864F9Ae7cfb5668Dae90C0e20c4C3D437664'.toLowerCase(),
   },
+  3: {
+    chainId: 3,
+    decimals: 18,
+    logoURI: ETHER_CURRENCY_LOGO,
+    name: 'ETH',
+    address: ADDRESS_ZERO,
+    symbol: 'ETH',
+    mode: 'NATIVE',
+    homeTokenAddress:
+      '0x950E96BaA4C2AED9B414909970C369f062Aed655'.toLowerCase(),
+  },
 };
 
 export const nativeCurrencyMediators = {
@@ -83,6 +95,7 @@ export const nativeCurrencyMediators = {
   42: '0x227a6f13aa0dba8912d740c0f88fb1304b2597e1'.toLowerCase(),
   56: '0xefc33f8b2c4d51005585962be7ea20518ea9fd0d'.toLowerCase(),
   99: '0xF6a1Ad94d29679388e533B63bfE1Fd6f1680D23B'.toLowerCase(),
+  3: '0xDD920321d1F54040D289173Adbc4C9a6040A4111'.toLowerCase(),
 };
 
 export const networkNames = {
@@ -92,6 +105,8 @@ export const networkNames = {
   77: 'Sokol Testnet',
   99: 'POA Network',
   100: 'Gnosis Chain',
+  99999: 'GU Sandbox',
+  3: 'Ropsten',
 };
 
 export const networkLabels = {
@@ -104,6 +119,7 @@ export const networkLabels = {
   77: 'Sokol',
   99: 'POA',
   100: 'Gnosis Chain',
+  99999: 'GU Sandbox',
 };
 
 export const networkCurrencies = {
@@ -140,6 +156,8 @@ const {
   REACT_APP_SOKOL_RPC_URL,
   REACT_APP_KOVAN_RPC_URL,
   REACT_APP_BSC_RPC_URL,
+  REACT_APP_ROPSTEN_RPC_URL,
+  REACT_APP_GUSANBOX_RPC_URL
 } = process.env;
 
 export const chainUrls = {
@@ -178,6 +196,18 @@ export const chainUrls = {
     explorer: 'https://blockscout.com/xdai/mainnet',
     chainId: 100,
     name: networkNames[100],
+  },
+  99999: {
+    rpc: REACT_APP_GUSANBOX_RPC_URL.split(' '),
+    explorer: 'https://blockscout.com/xdai/mainnet',
+    chainId: 99999,
+    name: networkNames[99999],
+  },
+  3: {
+    rpc: REACT_APP_ROPSTEN_RPC_URL.split(' '),
+    explorer: 'https://blockscout.com/xdai/mainnet',
+    chainId: 3,
+    name: networkNames[3],
   },
 };
 
