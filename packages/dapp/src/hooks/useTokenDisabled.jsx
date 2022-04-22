@@ -6,20 +6,20 @@ import { isERC20DaiAddress } from 'components/warnings/DaiWarning';
 import { isRebasingToken } from 'components/warnings/RebasingTokenWarning';
 import { isSafeMoonToken } from 'components/warnings/SafeMoonTokenWarning';
 import { isDisabledStakeToken } from 'components/warnings/StakeTokenWarning';
-import { Contract } from 'ethers';
+// import { Contract } from 'ethers';
 import { useBridgeDirection } from 'hooks/useBridgeDirection';
 import {
-  ADDRESS_ZERO,
+  // ADDRESS_ZERO,
   BSC_XDAI_BRIDGE,
   ETH_BSC_BRIDGE,
   ETH_XDAI_BRIDGE,
 } from 'lib/constants';
 import { logError } from 'lib/helpers';
-import { networks } from 'lib/networks';
-import { getEthersProvider } from 'lib/providers';
+// import { networks } from 'lib/networks';
+// import { getEthersProvider } from 'lib/providers';
 import { useCallback, useEffect, useState } from 'react';
-
-const GC_BSC_OMNIBRIDGE = networks[BSC_XDAI_BRIDGE].foreignMediatorAddress;
+// NOTICE: remove this default bridge to prevent error
+// const GC_BSC_OMNIBRIDGE = networks[BSC_XDAI_BRIDGE].foreignMediatorAddress;
 
 export const useTokenGCOriginOnBSC = token => {
   const { bridgeDirection } = useBridgeDirection();
@@ -29,14 +29,14 @@ export const useTokenGCOriginOnBSC = token => {
     setFetching(true);
     try {
       if (token && token.chainId === 56 && bridgeDirection === ETH_BSC_BRIDGE) {
-        const provider = await getEthersProvider(56);
-        const abi = [
-          'function nativeTokenAddress(address) view returns (address)',
-        ];
-        const contract = new Contract(GC_BSC_OMNIBRIDGE, abi, provider);
+        // const provider = await getEthersProvider(56);
+        // const abi = [
+        //   'function nativeTokenAddress(address) view returns (address)',
+        // ];
+        // const contract = new Contract(GC_BSC_OMNIBRIDGE, abi, provider);
 
-        const address = await contract.nativeTokenAddress(token.address);
-        setIsToken(address !== ADDRESS_ZERO);
+        // const address = await contract.nativeTokenAddress(token.address);
+        // setIsToken(address !== ADDRESS_ZERO);
       } else {
         setIsToken(false);
       }
