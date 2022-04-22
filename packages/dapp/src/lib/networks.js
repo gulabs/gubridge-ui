@@ -239,19 +239,19 @@ export const defaultTokens = {
   },
   [GUSANDBOX_ROPSTEN_BRIDGE]: {
     99999: {
-      address: '0x34E60f4adc2DF071046aE753f2ff4d7032A58938',
+      address: '0x950E96BaA4C2AED9B414909970C369f062Aed655',
       chainId: 99999,
-      symbol: 'CCC2',
-      name: 'CCC2',
+      symbol: 'WETH',
+      name: 'Wrapped ETH from Ropsten',
     },
     3: nativeCurrencies[3],
   },
   [GUSANDBOX_RINKEBY_BRIDGE]: {
     99999: {
-      address: '0x34E60f4adc2DF071046aE753f2ff4d7032A58938',
+      address: '0xeBed622B6E0EE7F62c39b9960D62771C332a27ea',
       chainId: 99999,
-      symbol: 'CCC2',
-      name: 'CCC2',
+      symbol: 'WETH',
+      name: 'Wrapped ETH from Rinkeby',
     },
     4: nativeCurrencies[4],
   },
