@@ -6,6 +6,7 @@ export const POA_XDAI_BRIDGE = 'poa-xdai';
 export const KOVAN_SOKOL_BRIDGE = 'kovan-sokol';
 export const ETH_BSC_BRIDGE = 'eth-bsc';
 export const GUSANDBOX_ROPSTEN_BRIDGE = 'gusandbox-ropsten';
+export const GUSANDBOX_RINKEBY_BRIDGE = 'gusandbox-rinkeby';
 
 export const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000';
 export const ETHER_CURRENCY_LOGO =
@@ -88,6 +89,17 @@ export const nativeCurrencies = {
     homeTokenAddress:
       '0x950E96BaA4C2AED9B414909970C369f062Aed655'.toLowerCase(),
   },
+  4: {
+    chainId: 4,
+    decimals: 18,
+    logoURI: ETHER_CURRENCY_LOGO,
+    name: 'ETH',
+    address: ADDRESS_ZERO,
+    symbol: 'ETH',
+    mode: 'NATIVE',
+    homeTokenAddress:
+      '0xeBed622B6E0EE7F62c39b9960D62771C332a27ea'.toLowerCase(),
+  },
 };
 
 export const nativeCurrencyMediators = {
@@ -96,6 +108,7 @@ export const nativeCurrencyMediators = {
   56: '0xefc33f8b2c4d51005585962be7ea20518ea9fd0d'.toLowerCase(),
   99: '0xF6a1Ad94d29679388e533B63bfE1Fd6f1680D23B'.toLowerCase(),
   3: '0xDD920321d1F54040D289173Adbc4C9a6040A4111'.toLowerCase(),
+  4: '0x3269CEb22498599f7457ECec7020b7ddc7a1971c'.toLowerCase(),
 };
 
 export const networkNames = {
@@ -107,6 +120,7 @@ export const networkNames = {
   100: 'Gnosis Chain',
   99999: 'GU Sandbox',
   3: 'Ropsten',
+  4: 'Rinkeby'
 };
 
 export const networkLabels = {
@@ -157,7 +171,8 @@ const {
   REACT_APP_KOVAN_RPC_URL,
   REACT_APP_BSC_RPC_URL,
   REACT_APP_ROPSTEN_RPC_URL,
-  REACT_APP_GUSANBOX_RPC_URL
+  REACT_APP_GUSANBOX_RPC_URL,
+  REACT_APP_RINKEBY_RPC_URL
 } = process.env;
 
 export const chainUrls = {
@@ -208,6 +223,12 @@ export const chainUrls = {
     explorer: 'https://blockscout.com/xdai/mainnet',
     chainId: 3,
     name: networkNames[3],
+  },
+  4: {
+    rpc: REACT_APP_RINKEBY_RPC_URL.split(' '),
+    explorer: 'https://blockscout.com/xdai/mainnet',
+    chainId: 4,
+    name: networkNames[4],
   },
 };
 

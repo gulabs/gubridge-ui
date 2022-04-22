@@ -2,6 +2,7 @@ import {
   BSC_XDAI_BRIDGE,
   ETH_BSC_BRIDGE,
   ETH_XDAI_BRIDGE,
+  GUSANDBOX_RINKEBY_BRIDGE,
   GUSANDBOX_ROPSTEN_BRIDGE,
   KOVAN_SOKOL_BRIDGE,
   nativeCurrencies,
@@ -12,10 +13,10 @@ export {
   BSC_XDAI_BRIDGE,
   ETH_BSC_BRIDGE,
   ETH_XDAI_BRIDGE,
+  GUSANDBOX_RINKEBY_BRIDGE,
   GUSANDBOX_ROPSTEN_BRIDGE,
   KOVAN_SOKOL_BRIDGE,
-  POA_XDAI_BRIDGE,
-};
+  POA_XDAI_BRIDGE};
 
 const ETH_XDAI_BRIDGE_CONFIG = {
   label: 'eth⥊gc',
@@ -122,11 +123,30 @@ const GUSANDBOX_ROPSTEN_BRIDGE_CONFIG = {
   foreignAmbAddress: '0xF1b5cc67c911F67cCC4021C22241AC7c21CB43C8'.toLowerCase(),
   homeAmbAddress: '0x55af7F974F6B294034000Bb46c6359C5c605B62A'.toLowerCase(),
   foreignGraphName: 'cuonghx-gutech/ropsten-token-bridge',
-  homeGraphName: 'cuonghx-gutech/gusandbox-ropsten-omnibridge',
+  homeGraphName: 'gulaps/gusandbox-to-ropsten-omnibridge',
   ambLiveMonitorPrefix: 'http://alm-bsc.herokuapp.com',
   claimDisabled: false,
   tokensClaimDisabled: [],
 };
+
+const GUSANDBOX_RINKEBY_BRIDGE_CONFIG = {
+  label: 'GUSandbox⥊Rinkeby',
+  homeChainId: 99999,
+  foreignChainId: 4,
+  enableForeignCurrencyBridge: true,
+  foreignMediatorAddress:
+    '0xaDa9B1590053466C7DEFe10D30fc72C39a4F25CB'.toLowerCase(),
+  homeMediatorAddress:
+    '0xBF4E666B6136a0D94fE4F9f27Fe1Da783Ed2cdf9'.toLowerCase(),
+  foreignAmbAddress: '0x0F806D8dd8bb02Ad9dd9bA0e8e351B4319cc45e4'.toLowerCase(),
+  homeAmbAddress: '0xDf1949Fd97c3d484D39269cCd11082d0Ac1f9440'.toLowerCase(),
+  foreignGraphName: 'cuonghx-gutech/rinkeby-to-gusandbox-omnibridge',
+  homeGraphName: 'gulaps/gusandbox-to-rinkeby-omnibridge',
+  ambLiveMonitorPrefix: 'http://alm-bsc.herokuapp.com',
+  claimDisabled: false,
+  tokensClaimDisabled: [],
+};
+
 
 const ENABLED_BRIDGES = process.env.REACT_APP_ENABLED_BRIDGES.split(' ').map(
   b => b.toLowerCase(),
@@ -139,6 +159,7 @@ const bridgeInfo = {
   [KOVAN_SOKOL_BRIDGE]: KOVAN_SOKOL_BRIDGE_CONFIG,
   [ETH_BSC_BRIDGE]: ETH_BSC_BRIDGE_CONFIG,
   [GUSANDBOX_ROPSTEN_BRIDGE]: GUSANDBOX_ROPSTEN_BRIDGE_CONFIG,
+  [GUSANDBOX_RINKEBY_BRIDGE]: GUSANDBOX_RINKEBY_BRIDGE_CONFIG,
 };
 
 const getNetworkConfig = bridges => {
@@ -224,5 +245,14 @@ export const defaultTokens = {
       name: 'CCC2',
     },
     3: nativeCurrencies[3],
+  },
+  [GUSANDBOX_RINKEBY_BRIDGE]: {
+    99999: {
+      address: '0x34E60f4adc2DF071046aE753f2ff4d7032A58938',
+      chainId: 99999,
+      symbol: 'CCC2',
+      name: 'CCC2',
+    },
+    4: nativeCurrencies[4],
   },
 };
