@@ -124,7 +124,7 @@ const GUSANDBOX_ROPSTEN_BRIDGE_CONFIG = {
   homeAmbAddress: '0x55af7F974F6B294034000Bb46c6359C5c605B62A'.toLowerCase(),
   foreignGraphName: 'cuonghx-gutech/ropsten-token-bridge',
   homeGraphName: 'gulaps/gusandbox-to-ropsten-omnibridge',
-  ambLiveMonitorPrefix: 'http://alm-bsc.herokuapp.com',
+  ambLiveMonitorPrefix: 'https://alm-gusandbox-ropsten-dot-gu-bridge.an.r.appspot.com',
   claimDisabled: false,
   tokensClaimDisabled: [],
 };
@@ -142,7 +142,7 @@ const GUSANDBOX_RINKEBY_BRIDGE_CONFIG = {
   homeAmbAddress: '0xDf1949Fd97c3d484D39269cCd11082d0Ac1f9440'.toLowerCase(),
   foreignGraphName: 'cuonghx-gutech/rinkeby-to-gusandbox-omnibridge',
   homeGraphName: 'gulaps/gusandbox-to-rinkeby-omnibridge',
-  ambLiveMonitorPrefix: 'http://alm-bsc.herokuapp.com',
+  ambLiveMonitorPrefix: 'https://alm-gusandbox-rinkeby-dot-gu-bridge.an.r.appspot.com',
   claimDisabled: false,
   tokensClaimDisabled: [],
 };
